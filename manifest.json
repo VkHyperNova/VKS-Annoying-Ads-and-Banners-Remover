@@ -1,0 +1,22 @@
+{
+	"manifest_version": 2,
+
+	"name": "VKS Banner Remover",
+	"description": "Removes banners and autoclicks annoying pop ups.",
+	"version": "2.0",
+	"icons": {
+		"16": "ic_small.png",
+		"48": "ic_big.png"
+	},
+	"content_scripts": [
+	{ 
+		"run_at" :"document_start",
+		"matches": ["https://*.elu24.ee/*", "https://*.postimees.ee/*", "https://*.reporter.ee/*"],
+		"js": ["autorun.js"] 
+	}
+],
+	"browser_action": {
+		"default_icon": "ic_small.png",
+		"default_title": "Remove banners"
+	}
+}

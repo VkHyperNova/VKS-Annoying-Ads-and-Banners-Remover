@@ -26,6 +26,8 @@ function RemoveShit(event){
 		
 		
 //class="ytp-ad-persistent-progress-bar-container" div
+
+
 	
 
 

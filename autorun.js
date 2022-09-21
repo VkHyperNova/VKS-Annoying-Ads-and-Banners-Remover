@@ -7,9 +7,9 @@ function RemoveShit(event){
 
 	var url = window.location.href;
 	 if (url.includes('elu24')){
-		NamesToRemoveArray = ["BigBanner", "Reporter Background", "ScrollHeader", "Header", "BannerBranding"];  	
+		NamesToRemoveArray = ["BigBanner", "Reporter Background", "ScrollHeader", "Header", "BannerBranding", "reporterAdBanner"];  	
 	} else if (url.includes('postimees')){
-		NamesToRemoveArray = ["Blue Header", "Postimees Cookies", "Postimees second branding", "Postimees branding", "Nav", "Blue Header", "BigBanner", "Reporter Background"];
+		NamesToRemoveArray = ["Blue Header", "Postimees Cookies", "Postimees second branding", "Postimees branding", "Nav", "Blue Header", "BigBanner", "Reporter Background", "reporterAdBanner"];
 	} else if (url.includes('reporter')){
 		NamesToRemoveArray = ["reporterAdBanner"];
 	}

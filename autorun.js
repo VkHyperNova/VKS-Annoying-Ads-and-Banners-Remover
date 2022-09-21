@@ -10,7 +10,9 @@ function RemoveShit(event){
 		NamesToRemoveArray = ["BigBanner", "Reporter Background", "ScrollHeader", "Header", "BannerBranding"];  	
 	} else if (url.includes('postimees')){
 		NamesToRemoveArray = ["Blue Header", "Postimees Cookies", "Postimees second branding", "Postimees branding", "Nav", "Blue Header", "BigBanner", "Reporter Background"];
-	} 
+	} else if (url.includes('reporter')){
+		NamesToRemoveArray = ["reporterAdBanner"];
+	}
 
 	
 	
@@ -25,7 +27,7 @@ function RemoveShit(event){
 		var Click = Click;
 		
 		
-//class="ytp-ad-persistent-progress-bar-container" div
+
 
 
 	
@@ -113,6 +115,12 @@ function RemoveShit(event){
 	var Classes = [{
 		"ClassName": "adblock-notif",
 		"Name": "BigBanner",
+		"SearchByClass": true,
+		"Click": false
+	},
+	{
+		"ClassName": "ad-block-piano",
+		"Name": "reporterAdBanner",
 		"SearchByClass": true,
 		"Click": false
 	},

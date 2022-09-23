@@ -13,7 +13,7 @@ function RemoveShit(event){
 	} else if (url.includes('reporter')){
 		NamesToRemoveArray = ["reporterAdBanner"];
 	} else if (url.includes('delfi')){
-		RemoveDelfiShit(event);
+		DelfiBannerAutoClicker(event);
 		NamesToRemoveArray = ["delfi reklaam content", "delfi reklaam mobile", "delfi paywall"];
 	}
 
@@ -216,7 +216,7 @@ function RemoveShit(event){
 
 }
 
-function RemoveDelfiShit(event){
+function DelfiBannerAutoClicker(event){
 
 	
 	var timer = setInterval(ClickBtn, 100);

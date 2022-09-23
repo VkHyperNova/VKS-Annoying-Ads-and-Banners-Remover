@@ -1,7 +1,7 @@
 {
 	"manifest_version": 3,
 
-	"name": "VKS Banner Remover",
+	"name": "VKS Annoying Ads and Banners Remover",
 	"description": "Removes Banners, Ads and Autoclicks annoying pop ups. Only for Estonian news paper sites. (delfi, elu24, postimees, reporter)",
 	"version": "3.0",
 	"icons": {

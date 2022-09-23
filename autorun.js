@@ -12,6 +12,9 @@ function RemoveShit(event){
 		NamesToRemoveArray = ["Blue Header", "Postimees Cookies", "Postimees second branding", "Postimees branding", "Nav", "Blue Header", "BigBanner", "Reporter Background", "reporterAdBanner"];
 	} else if (url.includes('reporter')){
 		NamesToRemoveArray = ["reporterAdBanner"];
+	} else if (url.includes('delfi')){
+		RemoveDelfiShit(event);
+		NamesToRemoveArray = ["delfi reklaam content", "delfi reklaam mobile", "delfi paywall"];
 	}
 
 	
@@ -35,9 +38,11 @@ function RemoveShit(event){
 
 		var SearchByClassFunction = function(){
 			var Element = document.getElementsByClassName(ClassName);
-			if (Element.length > 0) {
-				ClickOrBlock(Element[0]);					
-			} 
+
+			// Remove all elements with same name
+			for (var i = 0; i < Element.length; i++) {
+				ClickOrBlock(Element[i]);	
+			}
 		}
 
 		var SearchByIdFunction = function(){
@@ -51,7 +56,7 @@ function RemoveShit(event){
 		var ClickOrBlock = function(Element){
 			if(Click){
 				Element.click();
-			} else {
+			} else {	
 				Element.style.display = "none";		
 			}
 			
@@ -111,10 +116,28 @@ function RemoveShit(event){
 		
 	}
 
-
+	
 	var Classes = [{
 		"ClassName": "adblock-notif",
 		"Name": "BigBanner",
+		"SearchByClass": true,
+		"Click": false
+	},
+	{
+		"ClassName": "article-paywall",
+		"Name": "delfi paywall", 
+		"SearchByClass": true,
+		"Click": false
+	},
+	{
+		"ClassName": "C-banner U-text-center C-banner--content",
+		"Name": "delfi reklaam content", 
+		"SearchByClass": true,
+		"Click": false
+	},
+	{
+		"ClassName": "C-banner U-text-center C-banner--mobile",
+		"Name": "delfi reklaam mobile", 
 		"SearchByClass": true,
 		"Click": false
 	},
@@ -193,8 +216,39 @@ function RemoveShit(event){
 
 }
 
+function RemoveDelfiShit(event){
+
+	
+	var timer = setInterval(ClickBtn, 100);
+
+	var DFirst = document.getElementById("notification-close");
+	var DSecond = document.getElementsByClassName('C-ad-block-layer-content__heading-decoration--close C-button');
+	//var CookieRibbon = document.getElementById("cookie_ribbon");
+
+	function ClickBtn(){ 
+
+    	if(DSecond.length > 0){
+    		DSecond[0].click();
+			console.log("Delfi Second Buy Notification removed!");
+    	}
+
+    	if(DFirst){
+    		DFirst.click();
+    		console.log("Delfi Buy Notification removed!");
+    	}
+
+    	/*if(CookieRibbon.style.display !== "none"){
+    		CookieRibbon.style.display = "none";
+    		console.log("Cookie Ribbon removed!");
+    		
+    	}*/
+
+    	
+  	
+	}
 
 
+}
 
 
 
